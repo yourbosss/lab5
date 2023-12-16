@@ -1,0 +1,42 @@
+﻿<Window x:Class="lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:oxy="http://oxyplot.org/wpf"
+        
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab5"
+        mc:Ignorable="d"
+        Title="MainViewModel" Height="611" Width="970">
+    <Window.DataContext>
+        <local:MainWindow/>
+    </Window.DataContext>
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,0,-45" Background="#FF1D9396">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <oxy:PlotView x:Name="PlotModel" Model="{Binding MyModel}" Margin="0,0,0,324"/>
+        <TextBox x:Name="tbInput" HorizontalAlignment="Left" Margin="208,357,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" FontSize="20"/>
+        <Label Content="Введите формулу: " HorizontalAlignment="Left" Margin="14,353,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.093,0.328" FontSize="20"/>
+        <Label Content="Границы интервала: " HorizontalAlignment="Left" Margin="8,403,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.093,0.328" FontSize="20"/>
+        <TextBox x:Name="tbLeftBorder" HorizontalAlignment="Left" Margin="204,407,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="99" FontSize="20"/>
+        <TextBox x:Name="tbRigthBorder" HorizontalAlignment="Left" Margin="308,407,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="99" FontSize="20"/>
+        <TextBox x:Name="tbAccuracy" HorizontalAlignment="Left" Margin="206,470,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" FontSize="20"/>
+        <Label Content="Введите точность: " HorizontalAlignment="Left" Margin="3,462,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.093,0.328" FontSize="20"/>
+        <Button x:Name="btCalculate" Content="Вычислить" HorizontalAlignment="Left" Margin="615,527,0,0" VerticalAlignment="Top" Height="36" Width="211" FontSize="20" Click="btCalculate_Click" Background="#FFD61D1D"/>
+        <CheckBox x:Name="cbRectangle" Content="Метод прямоугольников" HorizontalAlignment="Left" Margin="491,358,0,0" VerticalAlignment="Top" FontSize="20" Height="29"/>
+        <CheckBox x:Name="cbTrapez" Content="Метод трапеций" HorizontalAlignment="Left" Margin="491,401,0,0" VerticalAlignment="Top" FontSize="20" Height="28"/>
+        <CheckBox x:Name="cbParabola" Content="Метод парабол" HorizontalAlignment="Left" Margin="491,448,0,0" VerticalAlignment="Top" FontSize="20" Height="29"/>
+        <TextBox x:Name="tbRectangle" HorizontalAlignment="Left" Margin="210,526,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="201" FontSize="20" Height="37"/>
+        <Label Content= "N:" HorizontalAlignment="Left" Margin="12,520,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.099,0.979" FontSize="20" Height="44" Width="193"/>
+        <Label x:Name="lbRectangle" Content= "Площадь" HorizontalAlignment="Left" Margin="801,360,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.093,0.328" FontSize="20" Height="37" Width="281"/>
+        <Label x:Name="lbParabol" Content= "Площадь" HorizontalAlignment="Left" Margin="801,448,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.093,0.328" FontSize="20" Height="38" Width="281"/>
+        <Label x:Name="lbTrapez" Content= "Площадь" HorizontalAlignment="Left" Margin="801,403,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.093,0.328" FontSize="20" Height="38" Width="281"/>
+        <Label Content="Методы:" HorizontalAlignment="Left" Margin="673,321,0,0" VerticalAlignment="Top" FontSize="20"/>
+    </Grid>
+</Window>
